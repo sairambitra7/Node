@@ -62,3 +62,9 @@ function callback() {
 }
 
 server.listen(3000, callback);
+
+//Settime demo example----------------------------------------------------------
+
+setTimeout(() => {
+  console.log("settimeout executed");
+}, 3000);
