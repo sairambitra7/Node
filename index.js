@@ -11,14 +11,25 @@ var express = require("express");
 
 // calc.add(100, 200);
 var app = express();
+var mongoose = require("mongoose");
 var productCtrl = require("./controllers/products.ctrl");
 var defaultCtrl = require("./controllers/default.ctrl");
+var bookCtrl = require("./controllers/book.ctrl");
 
 function callback() {
   console.log("server is running on port 3000");
 }
 
 app.listen(3000, callback);
+
+mongoose.connect(
+  //mongoose connected
+  "mongodb://localhost:27017/productsDb",
+  { useNewUrlParser: true },
+  function() {
+    console.log("Connected");
+  }
+);
 
 // app.get("/", function(req, res) {
 //   res.send("Express API");
@@ -32,6 +43,7 @@ app.get("/products", productCtrl.get); //another to get the data from objects li
 
 app.get("/", defaultCtrl.get);
 app.get("/health", defaultCtrl.health);
+app.get("/book", bookCtrl.get);
 
 app.get("/banners", function(req, res) {
   res.send("List of banners");
