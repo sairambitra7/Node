@@ -3,12 +3,16 @@ var Book = require("../models/book.model");
 class BookCtrl {
   get(req, res) {
     // var books = Book.find();
-    Books.find(function(err, books) {
+    // let savebook = new Book({ name: "abcd" });
+    // savebook.save();
+
+    Book.find(function(err, data) {
+      console.log(data);
       res.status(200);
-      res.json(books);
+      res.json(data);
     });
   }
-  save(req, res) {
+  put(req, res) {
     console.log(req.body);
 
     var book = new Book(req.body);

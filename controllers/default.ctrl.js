@@ -7,7 +7,7 @@
 class DefaultCtrl {
   get(req, res) {
     res.status(200); //convensions says its good
-    res.send("Hey This is You are Dashboard");
+    res.send("Hey This is Your Dashboard");
   }
 
   health(req, res) {

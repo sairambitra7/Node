@@ -24,27 +24,26 @@ app.listen(3000, callback);
 
 mongoose.connect(
   //mongoose connected
-  "mongodb://localhost:27017/productsDb",
+  "mongodb://test_user:test!234@qa.dfftech.com:27017/test_db",
   { useNewUrlParser: true },
   function() {
     console.log("Connected");
   }
 );
-
+app.get("/book", bookCtrl.get);
 // app.get("/", function(req, res) {
 //   res.send("Express API");
 // });
 
-app.get("/cards", function(req, res) {
-  res.send("List of Cards");
-});
+// app.get("/cards", function(req, res) {
+//   res.send("List of Cards");
+// });
 
-app.get("/products", productCtrl.get); //another to get the data from objects like(productCtrl.js).
+// app.get("/products", productCtrl.get); //another to get the data from objects like(productCtrl.js).
 
-app.get("/", defaultCtrl.get);
-app.get("/health", defaultCtrl.health);
-app.get("/book", bookCtrl.get);
+// app.get("/", defaultCtrl.get);
+// app.get("/health", defaultCtrl.health);
 
-app.get("/banners", function(req, res) {
-  res.send("List of banners");
-});
+// app.get("/banners", function(req, res) {
+//   res.send("List of banners");
+// });
