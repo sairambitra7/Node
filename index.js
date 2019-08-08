@@ -31,6 +31,7 @@ mongoose.connect(
   "mongodb://test_user:test!234@qa.dfftech.com:27017/test_db",
   { useNewUrlParser: true },
   function() {
+    app.use("/", loginRouter);
     console.log("Connected");
   }
 );
@@ -38,7 +39,6 @@ mongoose.connect(
 app.use("/", defaultRouter);
 app.use("/", productRouter);
 app.use("/", bookRouter);
-app.use("/", loginRouter);
 
 // app.get("/book", bookCtrl.get);
 app.get("/", function(req, res) {

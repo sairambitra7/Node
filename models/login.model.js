@@ -1,8 +1,8 @@
 var mongoose = require("mongoose");
 
 var loginSchema = mongoose.Schema({
-  v_id: String,
-  name: String,
+  vid: String,
+  userid: String,
   email: String,
   mobile: Number
 });

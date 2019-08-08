@@ -2,9 +2,10 @@ var Book = require("../models/book.model");
 
 class BookCtrl {
   get(req, res) {
-    // var books = Book.find();
-    // let savebook = new Book({ name: "abcd" });
-    // savebook.save();
+    var books = Book.find();
+    let savebook = new Book({ name: "dhgfajh" });
+    console.log(savebook);
+    savebook.save();
 
     Book.find(function(err, data) {
       console.log(data);

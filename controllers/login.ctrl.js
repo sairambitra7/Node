@@ -2,9 +2,12 @@ var Login = require("../models/login.model");
 
 class LoginCtrl {
   get(req, res) {
-    var login = Login.find();
-    let savelogin = new Login({ v_id: "1" });
-    savebook.save();
+    // var login = Login.find();
+    // let savelogin = new Login({ v_id: "1" });
+
+    let login = new Login({ userid: "1234567890" });
+    login.save();
+    // savebook.save();
 
     Login.find(function(err, data) {
       console.log(data);
